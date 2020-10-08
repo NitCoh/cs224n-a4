@@ -1,0 +1,77 @@
+##Analyzing NMT Systems:
+
+####a
+1.  
+    - Error: Aqui --> Here's 
+    - Reason: The direct meaning of "Aqui" is "here" and because the model doesn't
+    have the access or attention to the past sentences, it doesn't know that the sentence
+    is expanding more examples that the person has gave.
+    Fix: expand the source_length sentences to include past context as well.
+ 
+ 2. 
+    - Error: the person mentions he is most widely child's author, however the model translate it differently.
+    - Reason: "ms ledo" direct translation is "more reading", so the embedding might not fused the right context
+    - Fix: allow the model fine-tune the embeddings
+    
+    
+ ####c
+ ######c1
+1.
+    r1: love can always find a way (len = 6)
+    r2: love makes anything possible (len = 4)
+    c1: the love can always do (len = 5)
+     n=1 :  3/5
+       numerator: 0 + 1 + 1 + 1 + 0
+     denominator: 1 + 1 + 1 + 1 + 1
+     n=2: 2/4 
+       numerator: 0 + 1 + 1 + 0
+     denominator: 1 + 1 + 1 + 1   
+     BP : exp(1 - (4/5))
+     
+    BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([3/5,2/4])) = 0.67177
+    
+    r1: love can always find a way (len = 6)
+    r2: love makes anything possible (len = 4)
+    c2: love can make anything possible (len = 5)
+     n=1 :   4/5
+       numerator: 1 + 1 + 0 + 1 + 1
+     denominator: 1 + 1 + 1 + 1 + 1
+     n=2: 2/4 
+       numerator: 1 + 0 + 0 + 1
+     denominator: 1 + 1 + 1 + 1   
+      BP : exp(1 - (4/5))
+     
+     BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([4/5,2/4])) = 0.79391
+     
+     c2 wins according to BLEU, altough c1 has closest meaning.
+     
+2. 
+    r1: love can always find a way (len = 6)
+    c1: the love can always do (len = 5)
+     n=1 :  3/5
+       numerator: 0 + 1 + 1 + 1 + 0
+     denominator: 1 + 1 + 1 + 1 + 1
+     n=2: 2/4 
+       numerator: 0 + 1 + 1 + 0
+     denominator: 1 + 1 + 1 + 1   
+     BP : exp(1 - (4/5))
+     
+    BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([3/5,2/4])) = 0.67177
+    
+    r1: love can always find a way (len = 6)
+    c2: love can make anything possible (len = 5)
+     n=1 :   2/5
+       numerator: 1 + 1 + 0 + 0 + 0
+     denominator: 1 + 1 + 1 + 1 + 1
+     n=2: 1/4 
+       numerator: 1 + 0 + 0 + 0
+     denominator: 1 + 1 + 1 + 1   
+      BP : exp(1 - (4/5))
+     
+     BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([2/5,1/4])) = 0.39695
+     
+    c1 wins according to the BLEU, now I agree.
+    
+3. 
+ 
+ 
