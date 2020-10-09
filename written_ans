@@ -26,9 +26,9 @@
      n=2: 2/4 
        numerator: 0 + 1 + 1 + 0
      denominator: 1 + 1 + 1 + 1   
-     BP : exp(1 - (4/5))
+     BP : 1
      
-    BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([3/5,2/4])) = 0.67177
+    BLEU (c1) := 1 * exp(0.5 * sum([log(3/5),log(2/4)])) = 0.54
     
     r1: love can always find a way (len = 6)
     r2: love makes anything possible (len = 4)
@@ -41,9 +41,9 @@
      denominator: 1 + 1 + 1 + 1   
       BP : exp(1 - (4/5))
      
-     BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([4/5,2/4])) = 0.79391
+     BLEU (c2) := 1 * exp(0.5*(log(4/5) + log(1/2))) = 0.63245
      
-     c2 wins according to BLEU, altough c1 has closest meaning.
+     c2 wins according to BLEU and c2 has closest meaning.
      
 2. 
     r1: love can always find a way (len = 6)
@@ -56,7 +56,7 @@
      denominator: 1 + 1 + 1 + 1   
      BP : exp(1 - (4/5))
      
-    BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([3/5,2/4])) = 0.67177
+    BLEU (c1) := 1 * exp(0.5 * sum([log(3/5),log(2/4)])) = 0.54
     
     r1: love can always find a way (len = 6)
     c2: love can make anything possible (len = 5)
@@ -66,12 +66,37 @@
      n=2: 1/4 
        numerator: 1 + 0 + 0 + 0
      denominator: 1 + 1 + 1 + 1   
-      BP : exp(1 - (4/5))
+      BP : 1
      
-     BLEU (c1) := exp(1-(4/5)) * (0.5 * sum([2/5,1/4])) = 0.39695
+     BLEU (c2) := 1 * exp(0.5 * sum([log(2/5),log(1/4)])) = 0.316227
      
     c1 wins according to the BLEU, now I agree.
     
-3. 
+3. This can be problematic due to phenomenon where we have y_hat which is not very close to r1
+but it is very correct translation, more references can help it achieve higher score and perhaps
+not get "false negative".
+
+4. 
+    - BLEU address the amount of similarity with the respect of the counted words,
+    which means the more n-grams we have in common results in close meaning.
+    while humans address the semantic meaning behind the phrase.  
+    - As a result of the first reason, lower length translation may achieve higher score,
+     so the BLEU score got penalty for lower length translations, even though length doesn't
+     always issue any less or more meaning in languages, e.g in french sentences are far more
+     longer than english.
  
  
+ 4328.91 words/sec, time elapsed 16473.38 sec
+epoch 16, iter 105940, avg. loss 29.20, avg. ppl 3.75 cum. examples 62080, speed 4257.34 words/sec, time elapsed 16475.04 sec
+epoch 16, iter 105950, avg. loss 25.48, avg. ppl 3.69 cum. examples 62400, speed 4101.00 words/sec, time elapsed 16476.56 sec
+epoch 16, iter 105960, avg. loss 27.78, avg. ppl 3.77 cum. examples 62720, speed 4171.86 words/sec, time elapsed 16478.16 sec
+epoch 16, iter 105970, avg. loss 26.22, avg. ppl 3.63 cum. examples 63040, speed 4192.48 words/sec, time elapsed 16479.72 sec
+epoch 16, iter 105980, avg. loss 27.02, avg. ppl 3.58 cum. examples 63360, speed 4377.99 words/sec, time elapsed 16481.27 sec
+epoch 16, iter 105990, avg. loss 28.19, avg. ppl 3.83 cum. examples 63680, speed 4292.37 words/sec, time elapsed 16482.83 sec
+epoch 16, iter 106000, avg. loss 28.02, avg. ppl 3.74 cum. examples 64000, speed 4179.87 words/sec, time elapsed 16484.46 sec
+epoch 16, iter 106000, cum. loss 26.78, cum. ppl 3.68 cum. examples 64000
+begin validation ...
+validation: iter 106000, dev. ppl 7.230674
+hit patience 5
+hit #5 trial
+early stop!
