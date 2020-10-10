@@ -100,3 +100,34 @@ validation: iter 106000, dev. ppl 7.230674
 hit patience 5
 hit #5 trial
 early stop!
+
+
+
+epoch 26, iter 87800, avg. loss 23.81, avg. ppl 3.20 cum. examples 115200, speed 5430.30 words/sec, time elapsed 21975.23 sec
+epoch 26, iter 87810, avg. loss 23.33, avg. ppl 3.11 cum. examples 115840, speed 5180.12 words/sec, time elapsed 21977.77 sec
+epoch 26, iter 87820, avg. loss 23.97, avg. ppl 3.16 cum. examples 116480, speed 5298.23 words/sec, time elapsed 21980.29 sec
+epoch 26, iter 87830, avg. loss 24.31, avg. ppl 3.34 cum. examples 117120, speed 5180.60 words/sec, time elapsed 21982.78 sec
+epoch 26, iter 87840, avg. loss 24.73, avg. ppl 3.30 cum. examples 117760, speed 5398.57 words/sec, time elapsed 21985.24 sec
+epoch 26, iter 87850, avg. loss 23.17, avg. ppl 3.18 cum. examples 118400, speed 5292.62 words/sec, time elapsed 21987.66 sec
+epoch 26, iter 87860, avg. loss 23.21, avg. ppl 3.19 cum. examples 119040, speed 5248.53 words/sec, time elapsed 21990.10 sec
+epoch 26, iter 87870, avg. loss 24.29, avg. ppl 3.13 cum. examples 119680, speed 5251.00 words/sec, time elapsed 21992.70 sec
+epoch 26, iter 87880, avg. loss 23.42, avg. ppl 3.18 cum. examples 120320, speed 5329.33 words/sec, time elapsed 21995.12 sec
+epoch 26, iter 87890, avg. loss 26.06, avg. ppl 3.45 cum. examples 120960, speed 5608.52 words/sec, time elapsed 21997.53 sec
+epoch 26, iter 87900, avg. loss 24.82, avg. ppl 3.24 cum. examples 121600, speed 5294.83 words/sec, time elapsed 22000.08 sec
+epoch 26, iter 87910, avg. loss 24.53, avg. ppl 3.30 cum. examples 122240, speed 5323.90 words/sec, time elapsed 22002.55 sec
+epoch 26, iter 87920, avg. loss 24.07, avg. ppl 3.16 cum. examples 122880, speed 5033.60 words/sec, time elapsed 22005.21 sec
+epoch 26, iter 87930, avg. loss 24.36, avg. ppl 3.32 cum. examples 123520, speed 5332.88 words/sec, time elapsed 22007.65 sec
+epoch 26, iter 87940, avg. loss 23.59, avg. ppl 3.20 cum. examples 124160, speed 5212.93 words/sec, time elapsed 22010.14 sec
+epoch 26, iter 87950, avg. loss 25.74, avg. ppl 3.30 cum. examples 124800, speed 5581.73 words/sec, time elapsed 22012.61 sec
+epoch 26, iter 87960, avg. loss 24.44, avg. ppl 3.15 cum. examples 125440, speed 5463.70 words/sec, time elapsed 22015.11 sec
+epoch 26, iter 87970, avg. loss 25.07, avg. ppl 3.37 cum. examples 126080, speed 5530.06 words/sec, time elapsed 22017.49 sec
+epoch 26, iter 87980, avg. loss 23.47, avg. ppl 3.24 cum. examples 126720, speed 5541.72 words/sec, time elapsed 22019.80 sec
+epoch 26, iter 87990, avg. loss 24.16, avg. ppl 3.14 cum. examples 127360, speed 5393.78 words/sec, time elapsed 22022.31 sec
+epoch 26, iter 88000, avg. loss 25.37, avg. ppl 3.28 cum. examples 128000, speed 5077.72 words/sec, time elapsed 22025.00 sec
+epoch 26, iter 88000, cum. loss 24.06, cum. ppl 3.22 cum. examples 128000
+begin validation ...
+validation: iter 88000, dev. ppl 7.521365
+hit patience 5
+hit #5 trial
+early stop!
+    
